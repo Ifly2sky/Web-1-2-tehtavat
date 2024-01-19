@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            var annokset = [];
+            var maksimi = parseInt(prompt("Anna maksimi annosmäärä"));
+            var suurin = 0;
+            var viimmeisin = 0;
+            var kaikki = 0;
+            function LisaaAnnos(){
+                var nykyinen = parseInt(prompt("Anna annosmäärä millilitroissa"));
+
+                if(maksimi < kaikki+nykyinen){
+                    alert("Annos ylitää maksimi annoskoon");
+                    return;
+                }
+
+                kaikki += nykyinen;
+
+                annokset.push(nykyinen);
+
+                if(viimmeisin >= nykyinen){
+                    alert("Annoksien määrä " + annokset.length + "\nAnnoksien kokonainen koko: " + kaikki + "\nAnnoksen määrä pienempi kuin aikaisempi" + "\nSuurin annettu annos: " + annokset.sort().reverse()[0]);
+                }
+                if(viimmeisin <= nykyinen){
+                    alert("Annoksien määrä " + annokset.length + "\nAnnoksien kokonainen koko: " + kaikki + "\nAnnoksen määrä suurempi kuin aikaisempi"+ "\nSuurin annettu annos: " + annokset.sort()[0]);
+                }
+                viimmeisin = nykyinen;
+            }
+        </script>
+        <button onclick="LisaaAnnos()">Anna uusi Annos</button>
+    </body>
+</html>

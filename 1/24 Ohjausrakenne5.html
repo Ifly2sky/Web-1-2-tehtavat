@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var numbers = [];
+            function Button_OnClick(){
+                var dice1 = Math.floor(Math.random() * 6) + 1;
+                var dice2 = Math.floor(Math.random() * 6) + 1;
+                var combined = dice1 + dice2;
+
+                document.getElementById("current").innerHTML = "Current roll: " + combined.toString()
+
+                numbers.push(combined);
+                var largest = numbers.sort(function(a, b){return b-a})[0].toString();
+                document.getElementById("largest").innerHTML = "Largest roll: " + largest;
+
+                var sum = 0
+
+                numbers.forEach(element => {
+                    sum += element
+                });
+
+                document.getElementById("SumOfAll").innerHTML = "Sum of all rolls: " + sum;
+
+            }
+        </script>
+    </head>
+    <Body>
+        <H1>Nopan Pyöritys</H1>
+        <Button onclick="Button_OnClick()">Pyöritä kaksi noppaa</Button>
+        <label id="current"></label>
+        <label id="largest"></label>
+        <label id="SumOfAll"></label>
+    </Body>
+</html>

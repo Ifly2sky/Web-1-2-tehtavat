@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+
+        </script>
+    </head>
+    <body>
+        <script>
+            var paistaa = confirm("Paistaako aurinko?");
+            var sataa = confirm("Sataako?");
+            var lampotila = confirm("Onko lämpötila > 0?");
+
+            if(paistaa && sataa && lampotila){
+                alert("Aurinko paistaa ja vettä sataa taitaa tulla kesä.");
+            }
+            else if(!paistaa && sataa && lampotila){
+                alert("Syksy saapui lehdet vei tuuli mennessään.");
+            }
+            else if((!paistaa && !sataa && lampotila) || (!paistaa && sataa && !lampotila)){
+                alert("Jo joutui armas aika ja suvi suloinen." );
+            }
+            else if(!paistaa && !sataa && !lampotila){
+                alert("Talvi");
+            }
+            else if(paistaa && !sataa && !lampotila){
+                alert("Kesä on Täydellä teholla!");
+            }
+            else if(paistaa && !sataa && lampotila){
+                alert("Kylmä kevät");
+            }
+        </script>
+    </body>
+</html>

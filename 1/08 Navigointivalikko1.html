@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .list{
+                background-color: rgba(0, 0, 0, 0.2);
+                text-decoration: white;
+                padding: 5px;
+                margin: 5px;
+                width: 200px;
+                list-style:none;
+            }
+            .Inlist{
+                background-color: rgba(0, 0, 0, 0.2);
+                text-decoration: white;
+                position: relative;
+                padding: 5px;
+                margin: 0px;
+                width: 190px;
+                top: 10px;
+                list-style:none;
+            }
+            li{
+                color: white;
+                padding: 5px;
+                margin: 0;
+            }
+            li:hover{
+                color: red;
+                background-color: rgba(0, 0, 0, 0.4);
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="list">
+            <li>Pääsivu</li>
+            <li>Taulukko sivu</li>
+            <li>Ulkopuoliset sivut
+                <ul class="Inlist">
+                    <li>Kaupungeista</li>
+                    <li>Avaruus</li>
+                </ul>
+            </li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+        <script src="jquery-3.7.1.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+            //tarkistaa jokaisen pakollisen kentän ja palauttaa onko kaikkissa tekstiä
+            function CheckEmpty(){
+                var isValid = true;
+                //ottaa vain input osista ne jossa on "required" ominaisuus
+                $("input").filter("[required]").each(function(){
+                    if($(this).val() === ''){
+                        isValid = false;
+                    }
+                });
+                return isValid;
+            }
+        </script>
+    </head>
+    <body>
+        <H1>Lomakkeen tietojen tarkistus JavaScriptillä</H1>
+        <p>Tässä harjoitellaan JavaScrptin käyttöä tekemällä lomakkeen tarkistus</p>
+        <h2>Yhteyslomake</h2>
+        <form action="jquery1.html" method="post">
+            <p >*Nimi:</p> <input type="text" name="Nimi"> <br>
+            <p>*Sukunimi:</p> <input type="text" name="Sukunimi"> <br>
+            <p>*Sähköposti:</p> <input type="email" name="Sahkoposti"> <br>
+            <p>Lähiosoite:</p> <input type="text" name="Lahiosoite" required> <br>
+            <p>Postinumero:</p> <input type="text" name="Postinumero" required> <br>
+            <p>Postitoimipaikka:</p> <input type="text" name="Postitoimipaikka" required> <br>
+            <p>Puhelin:</p> <input type="text" name="Puhelin" required> <br>
+            <p>Pvm:</p> <input type="text" name="Pvm" id="Pvm" required> <br>
+            <p>*Viesti:</p> <textarea type="text" name="Viesti" id="Viesti" rows="10" cols="50"></textarea> <br>
+            <input type="submit" value="Lähetä" id="Lahetys">
+        </form>
+        <script>
+            //päivittää lähetys napin, jotta sitä ei voi painaa ennen kuin vaaditut kentät on täytetty
+            $(document).change(function(){
+                if(CheckEmpty()){
+                    $("#Lahetys").prop('disabled', false);
+                }
+                else{
+                    $("#Lahetys").hide('disabled', true);
+                }
+            });
+            //muuttaa headerin kokoa kun sitä painetaan
+            $("h2").click(function(){
+                $(this).effect("size", {to:{width: 100, height: 20}})
+            });
+            //antaa päivämäärälle datepickerin kun sitä painaa
+            $("#Pvm").click(function(){
+                $("#Pvm").datepicker();
+            });
+        </script>
+    </body>
+</html>

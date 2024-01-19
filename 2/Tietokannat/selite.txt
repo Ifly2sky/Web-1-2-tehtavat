@@ -1,0 +1,1 @@
+Tietokanta on asia mihin varastoidaan tietoa johon pitää päästä käsiksi. Esimerkiksi verkkosivustot varastoivat sivutiedonsa tietokannassa. Nämä ovat elektroniset tietokannat, mutta tietokanta voi olla esimerkiksi kirjasto, joka ylläpitää suurta kokoelmaa kirjoja. Tietokantojen tieto sisältyy usein tiettyihin aihepiireihin.
